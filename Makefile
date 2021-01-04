@@ -32,10 +32,12 @@ st: $(OBJ)
 clean:
 	rm -f st $(OBJ) st-$(VERSION).tar.gz
 
-install: st
+install: st scroll
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f st $(DESTDIR)$(PREFIX)/bin
+	cp -f scroll $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
+	chmod 755 $(DESTDIR)$(PREFIX)/bin/scroll
 	tic -sx st.info
 	@echo Please see the README file regarding the terminfo entry of st.
 
